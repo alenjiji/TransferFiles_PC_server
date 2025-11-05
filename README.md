@@ -28,7 +28,6 @@ For detailed installation instructions and troubleshooting, see [README_INSTALL.
 3. On your Android device:
    - Connect to the same Wi-Fi network as the PC
    - Open the displayed URL (e.g., http://192.168.1.100:5000) in your browser
-   - Or use the companion Android app (if available)
 4. Browse and download shared files
 
 ## Development Setup
