@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # File Transfer App
 
 File Transfer App — lightweight PC server and Android client for sending files over a local hotspot.
