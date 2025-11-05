@@ -34,7 +34,7 @@ Quick setup
 
 1. Clone the repository:
 
-   git clone https://github.com/YOUR_USERNAME/TransferFiles_PC_server.git
+   git clone https://github.com/alenjiji/TransferFiles_PC_server.git
 
 2. Change to the project directory:
 
