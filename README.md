@@ -4,33 +4,36 @@ File Transfer App — lightweight PC server and Android client for sending files
 
 This repository contains a simple Python-based PC server (tkinter GUI + Flask web UI) that shares selected files on your local network, and an Android client that can browse and download those files.
 
-Project structure
+## Quick Installation (Pre-built Executable)
 
-- `src/server.py` — Main server script: tkinter GUI for sharing files and a small Flask web UI for mobile downloads.
-- `src/client.py` — Optional CLI client (if present).
-- `src/utils/` — Utility helpers (networking, file handling).
-- `src/config/settings.py` — Configuration (server IP / port).
-- `requirements.txt` — Python dependencies.
-- `build.py`, `server.spec` — Optional packaging helpers (PyInstaller).
+1. Download the latest release from the [Releases page](https://github.com/alenjiji/TransferFiles_PC_server/releases)
+2. Extract all files to a folder of your choice
+3. Run the installation script:
+   - Right-click on `setup.ps1` and select "Run with PowerShell"
+   - If you get a security warning, run this command in PowerShell:
+     ```powershell
+     Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force; .\setup.ps1
+     ```
+4. Once setup is complete, double-click `FileTransferServer.exe` to start the application
 
-Quick setup
+For detailed installation instructions and troubleshooting, see [README_INSTALL.md](README_INSTALL.md).
 
-# File Transfer App
+## Usage
 
-File Transfer App — lightweight PC server and Android client for sending files over a local hotspot.
+1. Start `FileTransferServer.exe` on your PC
+2. Use the GUI to:
+   - Add files you want to share
+   - Start/stop the server
+   - View server status and IP address
+3. On your Android device:
+   - Connect to the same Wi-Fi network as the PC
+   - Open the displayed URL (e.g., http://192.168.1.100:5000) in your browser
+   - Or use the companion Android app (if available)
+4. Browse and download shared files
 
-This repository contains a simple Python-based PC server (tkinter GUI + Flask web UI) that shares selected files on your local network, and an Android client that can browse and download those files.
+## Development Setup
 
-Project structure
-
-- `src/server.py` — Main server script: tkinter GUI for sharing files and a small Flask web UI for mobile downloads.
-- `src/client.py` — Optional CLI client (if present).
-- `src/utils/` — Utility helpers (networking, file handling).
-- `src/config/settings.py` — Configuration (server IP / port).
-- `requirements.txt` — Python dependencies.
-- `build.py`, `server.spec` — Optional packaging helpers (PyInstaller).
-
-Quick setup
+If you want to run from source or contribute to development:
 
 1. Clone the repository:
 
@@ -47,23 +50,38 @@ Quick setup
    pip install -r requirements.txt
 
 4. Run the server:
+   ```bash
+   python src\server.py
+   ```
 
-   python src\\server.py
+## Project Structure
 
-Usage
+- `src/server.py` — Main server script with GUI and web interface
+- `src/client.py` — Optional CLI client
+- `src/utils/` — Utility helpers (networking, file handling)
+- `src/config/settings.py` — Configuration (server IP / port)
+- `requirements.txt` — Python dependencies
+- `build.py`, `server.spec` — Packaging scripts (PyInstaller)
+- `setup.ps1` — Installation script for Windows
+- `README_INSTALL.md` — Detailed installation guide
 
-- Start the server on your PC. The GUI allows you to add files to share and start/stop the server.
-- The server log will print a web UI URL (for example: http://192.168.1.100:5000). Open that URL on your Android device's browser to view and download files.
-- Alternatively, use the companion Android client (if available) and point it at the server IP (http://<PC-IP>:5000) to fetch the file list and download.
+## Notes
 
-Notes
+- Ensure both PC and Android device are on the same Wi-Fi / hotspot network
+- Allow the server through Windows Firewall if needed (default port: 5000)
+- The application works best with modern browsers and Python 3.x
 
-- Ensure both PC and Android device are on the same Wi-Fi / hotspot network.
-- Allow the server ports (default 5000 for web UI) through Windows Firewall if needed.
-- The `.venv` directory is ignored by `.gitignore`; do not commit virtual environments.
+## License & Contributing
 
-License & contribution
+This project is open source. Feel free to contribute by:
+- Reporting issues
+- Suggesting new features
+- Submitting pull requests
 
-- Add a LICENSE file or contribution guidelines if you plan to share the repo publicly.
+## Troubleshooting
 
-If you want, I can also create a compact `README.md` with examples and screenshots or produce a release-ready packaging script.
+If you encounter any issues:
+1. Check the [README_INSTALL.md](README_INSTALL.md) for common solutions
+2. Make sure your firewall allows the application
+3. Verify both devices are on the same network
+4. Check if Python is properly installed (if running from source)
